@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 // colors
 //screens
 const int colorBackground = 0xff9d1115;

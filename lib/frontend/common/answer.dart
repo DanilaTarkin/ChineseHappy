@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Answer extends StatelessWidget {
-  Answer({
+class Answer extends StatefulWidget {
+  const Answer({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<Answer> createState() => _AnswerState();
+}
+
+class _AnswerState extends State<Answer> {
   @override
   Widget build(BuildContext context) {
     return Stack(
