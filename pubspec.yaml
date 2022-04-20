@@ -23,5 +23,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+  - family: Segoe UI
+    fonts:
+      - asset: assets/fonts/Segoe-UI.ttf
   assets:
   - assets/images/
