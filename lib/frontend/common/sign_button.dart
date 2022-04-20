@@ -5,10 +5,16 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import '../logup_screen.dart';
 
-class SignButton extends StatelessWidget {
-  SignButton({
+class SignButton extends StatefulWidget {
+  const SignButton({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SignButton> createState() => _SignButtonState();
+}
+
+class _SignButtonState extends State<SignButton> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -34,7 +40,7 @@ class SignButton extends StatelessWidget {
         Pinned.fromPins(
           Pin(size: 74.0, middle: 0.5062),
           Pin(startFraction: 0.1923, endFraction: 0.1923),
-          child: Text(
+          child: const Text(
             'Sign Up',
             style: TextStyle(
               fontFamily: 'Segoe UI',

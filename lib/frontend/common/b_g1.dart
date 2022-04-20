@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-class BG1 extends StatelessWidget {
-  BG1({
+class BG1 extends StatefulWidget {
+  const BG1({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<BG1> createState() => _BG1State();
+}
+
+class _BG1State extends State<BG1> {
   @override
   Widget build(BuildContext context) {
     return Stack(

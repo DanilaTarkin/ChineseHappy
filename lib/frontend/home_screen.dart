@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 
+import '../core/constants.dart';
+
 import 'common/list_.dart';
 import 'common/bar.dart';
 
@@ -11,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe9161c),
+      backgroundColor: const Color(colorBackground),
       body: Stack(
         children: <Widget>[
           Pinned.fromPins(
@@ -39,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             Pin(size: 34.8, middle: 0.5176),
             child:
                 // Adobe XD layer: 'Bar' (component)
-                bar(),
+                Bar(),
           ),
         ],
       ),
