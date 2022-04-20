@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:happychinese/presentation/component/answer.dart';
+
+import 'common/answer.dart';
 
 class QuestionScreen extends StatelessWidget {
   QuestionScreen({

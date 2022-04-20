@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/presentation/logup_screen.dart';
 import 'package:adobe_xd/page_link.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../logup_screen.dart';
 
 class SignButton extends StatelessWidget {
   SignButton({

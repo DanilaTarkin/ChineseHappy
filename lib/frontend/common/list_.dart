@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:happychinese/presentation/question_screen.dart';
 import 'package:adobe_xd/page_link.dart';
+
+import '../question_screen.dart';
 
 class List_ extends StatelessWidget {
   List_({

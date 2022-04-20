@@ -1,7 +1,8 @@
 import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:happychinese/dependeses/strokeOrderAnimationController.dart';
+
+import '/backend/controller/strokeOrderAnimationController.dart';
 
 /// A widget for displaying a stroke order diagram.
 /// Takes a `StrokeOrderAnimationController` as argument.

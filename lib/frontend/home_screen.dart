@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:happychinese/presentation/component/list_.dart';
-import 'package:happychinese/presentation/component/bar.dart';
+
+import 'common/list_.dart';
+import 'common/bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({
+  const HomeScreen({
     Key? key,
   }) : super(key: key);
   @override

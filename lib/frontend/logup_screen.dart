@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:happychinese/presentation/component/b_g.dart';
-import 'package:happychinese/presentation/component/sign_up_info.dart';
-import 'package:happychinese/presentation/component/sign_button.dart';
-import 'package:happychinese/presentation/login_screen.dart';
 import 'package:adobe_xd/page_link.dart';
-import 'package:happychinese/presentation/component/button1.dart';
-import 'package:happychinese/presentation/home_screen.dart';
+
+import 'common/b_g.dart';
+import 'common/sign_up_info.dart';
+import 'common/sign_button.dart';
+import 'common/button1.dart';
+
+import 'login_screen.dart';
+import 'home_screen.dart';
 
 class LogupScreen extends StatelessWidget {
   const LogupScreen({

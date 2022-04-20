@@ -1,44 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
-import 'package:happychinese/presentation/component/b_g1.dart';
-import 'package:happychinese/presentation/component/email_password.dart';
-import 'package:happychinese/presentation/component/sign_button.dart';
-import 'package:happychinese/presentation/component/button1.dart';
-import 'package:happychinese/presentation/home_screen.dart';
 import 'package:adobe_xd/page_link.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({
+import '../core/constants.dart';
+
+import 'common/b_g1.dart';
+import 'common/email_password.dart';
+import 'common/sign_button.dart';
+import 'common/button1.dart';
+
+import 'home_screen.dart';
+import 'login_screen.dart';
+
+class LoginScreenOld extends StatefulWidget {
+  const LoginScreenOld({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<LoginScreenOld> createState() => _LoginScreenOldState();
+}
+
+class _LoginScreenOldState extends State<LoginScreenOld> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffe9161c),
+      backgroundColor: const Color(colorBackground),
+      appBar: AppBar(
+        title: const Text('LOGIN OLD'),
+        centerTitle: true,
+        backgroundColor: Colors.black38,
+        foregroundColor: Colors.white70,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => const LoginScreen()));
+          },
+        ),
+      ),
       body: Stack(
-        children: <Widget>[
-          Pinned.fromPins(
-            Pin(size: 131.0, start: 24.0),
-            Pin(size: 53.0, start: 115.0),
-            child: Text(
-              'Sign In',
-              style: TextStyle(
-                fontFamily: 'Segoe UI',
-                fontSize: 40,
-                color: const Color(0xffe9d4a5),
-                fontWeight: FontWeight.w700,
-              ),
-              softWrap: false,
-            ),
-          ),
+        children: [
           Pinned.fromPins(
             Pin(start: 24.0, end: 24.0),
             Pin(size: 438.5, middle: 0.4725),
-            child:
-                // Adobe XD layer: 'BG1' (component)
-                BG1(),
+            child: BG1(),
           ),
-          Align(
+          const Align(
             alignment: Alignment(0.0, -0.21),
             child: SizedBox(
               width: 119.0,
@@ -48,14 +58,14 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   fontSize: 10,
-                  color: const Color(0x80e9d4a5),
+                  color: Color(0x80e9d4a5),
                   fontWeight: FontWeight.w700,
                 ),
                 softWrap: false,
               ),
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment(0.0, -0.292),
             child: SizedBox(
               width: 219.0,
@@ -65,7 +75,7 @@ class LoginScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Segoe UI',
                   fontSize: 32,
-                  color: const Color(0xffe9d4a5),
+                  color: Color(0xffe9d4a5),
                   fontWeight: FontWeight.w700,
                 ),
                 softWrap: false,
@@ -75,25 +85,19 @@ class LoginScreen extends StatelessWidget {
           Pinned.fromPins(
             Pin(start: 51.4, end: 51.4),
             Pin(size: 117.9, middle: 0.5468),
-            child:
-                // Adobe XD layer: 'EmailPassword' (component)
-                EmailPassword(),
+            child: EmailPassword(),
           ),
           Pinned.fromPins(
             Pin(size: 155.0, middle: 0.5),
             Pin(size: 52.0, end: 94.0),
-            child:
-                // Adobe XD layer: 'SignButton' (component)
-                SignButton(),
+            child: SignButton(),
           ),
           Align(
             alignment: Alignment(-0.003, 0.365),
             child: SizedBox(
               width: 98.0,
               height: 34.0,
-              child:
-                  // Adobe XD layer: 'Button1' (component)
-                  PageLink(
+              child: PageLink(
                 links: [
                   PageLinkInfo(
                     transition: LinkTransition.Fade,
