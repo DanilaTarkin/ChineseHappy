@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/page_link.dart';
+import 'package:happychinese/frontend/frontend_old/logup_screen.dart';
 
-import '../core/constants.dart';
+import 'package:happychinese/core/constants.dart';
+import 'package:happychinese/frontend/splash_screen_new.dart';
 
 import 'common/b_g1.dart';
 import 'common/email_password.dart';
 import 'common/button1.dart';
 
+import 'logup_screen.dart';
 import 'home_screen.dart';
 import 'splash_screen.dart';
 
@@ -25,7 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: const Color(colorBackground),
       appBar: AppBar(
-        title: const Text('LOGIN SCREEN'),
+        title: const Text('Sign In'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -35,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                    builder: (BuildContext context) => const SplashScreen()));
+                    builder: (BuildContext context) => const SplashScreenNew()));
           },
         ),
       ),
@@ -73,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             flex: 1,
                             child: Container(
                                 child: Column(
-                              mainAxisAlignment: MainAxisAlignment.end,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: const [
                                 Text(
                                   'Welcome Back',
@@ -96,14 +99,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               ],
                             ))),
                         Expanded(
-                            flex: 3,
+                            flex: 4,
                             child: Padding(
                               padding: const EdgeInsets.all(25.0),
                               child: Container(
                                 color: Colors.black38,
                                 child: const EmailPassword(),
                               ),
-                            )),
+                            )
+                          ),
                         Expanded(
                           flex: 1,
                           child: Container(
@@ -154,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         transition: LinkTransition.Fade,
                         ease: Curves.easeOut,
                         duration: 0.3,
-                        pageBuilder: () => HomeScreen(),
+                        pageBuilder: () => LogupScreen(),
                       ),
                     ],
                     child: Button1(),

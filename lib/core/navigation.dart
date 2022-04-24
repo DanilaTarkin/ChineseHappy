@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/splash_screen.dart';
+import 'package:happychinese/frontend/frontend_old/home_screen.dart';
+import 'package:happychinese/frontend/frontend_old/logup_screen.dart';
+import 'package:happychinese/frontend/frontend_old/splash_screen.dart';
+import 'package:happychinese/frontend/splash_screen_new.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
@@ -11,6 +14,6 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
-    return const SplashScreen();
+    return const SplashScreenNew();
   }
 }

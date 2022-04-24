@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:happychinese/frontend/frontend_old/logup_screen.dart';
 
-import '../core/constants.dart';
+import 'package:happychinese/core/constants.dart';
 
 import 'login_screen.dart';
 
@@ -16,10 +17,12 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold
+    (
       backgroundColor: const Color(colorBackground),
       body: GestureDetector(
-        onTap: () {
+        onTap: () 
+        {
           Navigator.pushReplacement(
               context,
               MaterialPageRoute(

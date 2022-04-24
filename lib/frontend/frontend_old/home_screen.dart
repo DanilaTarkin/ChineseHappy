@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 
-import '../core/constants.dart';
+import 'package:happychinese/core/constants.dart';
 
 import 'common/list_.dart';
 import 'common/bar.dart';

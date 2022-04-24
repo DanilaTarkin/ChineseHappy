@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:adobe_xd/pinned.dart';
 
-class EmailPassword extends StatefulWidget {
-  const EmailPassword({
+class SignUpInfo extends StatefulWidget {
+  const SignUpInfo({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<EmailPassword> createState() => _EmailPasswordState();
+  State<SignUpInfo> createState() => _SignUpInfoState();
 }
 
-class _EmailPasswordState extends State<EmailPassword> {
+class _SignUpInfoState extends State<SignUpInfo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,6 +29,22 @@ class _EmailPasswordState extends State<EmailPassword> {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Nickname',
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(),
+          ),
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.white70,
+              child: const TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
                 ),
               ),
             ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:adobe_xd/page_link.dart';
 
-import '../core/constants.dart';
+import 'package:happychinese/core/constants.dart';
 
 import 'common/b_g1.dart';
 import 'common/email_password.dart';
