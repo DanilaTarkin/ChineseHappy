@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:happychinese/frontend/quiz_screen.dart';
-import 'package:happychinese/frontend/tests_sccreen.dart';
+import 'package:happychinese/frontend/tests_screen.dart';
 
 import 'account_screen.dart';
 
