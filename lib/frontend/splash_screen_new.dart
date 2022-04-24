@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-
-import 'package:happychinese/frontend/frontend_old/login_screen.dart';
-
 import 'login_screen_new.dart';
 
 class SplashScreenNew extends StatefulWidget {

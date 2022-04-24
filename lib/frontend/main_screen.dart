@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happychinese/frontend/tests_sccreen.dart';
 
 import 'account_screen.dart';
 
@@ -73,6 +74,10 @@ class _BlockComponentState extends State<BlockComponent> {
         child: GestureDetector(
           onTap: () {
             print('clicked ' + index.toString());
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => const TestsScreen()));
           },
           child: Container(
               color: backgroundColor,

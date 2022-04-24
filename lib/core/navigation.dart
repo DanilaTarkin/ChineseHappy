@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/frontend_old/home_screen.dart';
-import 'package:happychinese/frontend/frontend_old/logup_screen.dart';
-import 'package:happychinese/frontend/frontend_old/splash_screen.dart';
 import 'package:happychinese/frontend/splash_screen_new.dart';
 
 class Navigation extends StatefulWidget {

@@ -7,12 +7,13 @@ import 'package:flutter/material.dart';
 import '../backend/controller/strokeOrderAnimationController.dart';
 import '../backend/model/strokeOrderAnimator.dart';
 
-class HomePage extends StatefulWidget {
+class QuazComponent extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _QuazComponentState createState() => _QuazComponentState();
 }
 
-class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
+class _QuazComponentState extends State<QuazComponent>
+    with TickerProviderStateMixin {
   late PageController _pageController;
   int _selectedIndex = 0;
 
@@ -64,178 +65,173 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Character Animator"),
-      ),
-      body: ChangeNotifierProvider<StrokeOrderAnimationController>.value(
-        value: _strokeOrderAnimationControllers[_selectedIndex],
-        child: Consumer<StrokeOrderAnimationController>(
-            builder: (context, controller, child) {
-          return Center(
-            child: SizedBox(
-              width: 500,
-              child: Column(
-                children: <Widget>[
-                  if (kIsWeb ||
-                      Platform.isLinux ||
-                      Platform.isWindows ||
-                      Platform.isMacOS)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        MaterialButton(
-                            onPressed: () {
-                              if (!controller.isQuizzing)
-                                _pageController.previousPage(
-                                    duration: Duration(milliseconds: 500),
-                                    curve: Curves.ease);
-                            },
-                            child: Text("Previous character")),
-                        Spacer(),
-                        MaterialButton(
-                            onPressed: () {
-                              if (!controller.isQuizzing)
-                                _pageController.nextPage(
-                                    duration: Duration(milliseconds: 500),
-                                    curve: Curves.ease);
-                            },
-                            child: Text("Next character")),
-                      ],
-                    ),
-                  Expanded(
-                    child: PageView(
-                      physics: controller.isQuizzing
-                          ? NeverScrollableScrollPhysics()
-                          : ScrollPhysics(),
-                      controller: _pageController,
-                      scrollDirection: Axis.horizontal,
-                      children: List.generate(
-                        _strokeOrderAnimationControllers.length,
-                        (index) => FittedBox(
-                          child: StrokeOrderAnimator(
-                            _strokeOrderAnimationControllers[index],
-                            key: UniqueKey(),
-                          ),
+    return ChangeNotifierProvider<StrokeOrderAnimationController>.value(
+      value: _strokeOrderAnimationControllers[_selectedIndex],
+      child: Consumer<StrokeOrderAnimationController>(
+          builder: (context, controller, child) {
+        return Center(
+          child: SizedBox(
+            width: 500,
+            child: Column(
+              children: <Widget>[
+                if (kIsWeb ||
+                    Platform.isLinux ||
+                    Platform.isWindows ||
+                    Platform.isMacOS)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      MaterialButton(
+                          onPressed: () {
+                            if (!controller.isQuizzing)
+                              _pageController.previousPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease);
+                          },
+                          child: Text("Previous character")),
+                      Spacer(),
+                      MaterialButton(
+                          onPressed: () {
+                            if (!controller.isQuizzing)
+                              _pageController.nextPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease);
+                          },
+                          child: Text("Next character")),
+                    ],
+                  ),
+                Expanded(
+                  child: PageView(
+                    physics: controller.isQuizzing
+                        ? NeverScrollableScrollPhysics()
+                        : ScrollPhysics(),
+                    controller: _pageController,
+                    scrollDirection: Axis.horizontal,
+                    children: List.generate(
+                      _strokeOrderAnimationControllers.length,
+                      (index) => FittedBox(
+                        child: StrokeOrderAnimator(
+                          _strokeOrderAnimationControllers[index],
+                          key: UniqueKey(),
                         ),
                       ),
-                      onPageChanged: (index) => {
-                        setState(() {
-                          _strokeOrderAnimationControllers[_selectedIndex]
-                              .stopAnimation();
-                          _selectedIndex = index;
-                        })
-                      },
                     ),
+                    onPageChanged: (index) => {
+                      setState(() {
+                        _strokeOrderAnimationControllers[_selectedIndex]
+                            .stopAnimation();
+                        _selectedIndex = index;
+                      })
+                    },
                   ),
-                  Flexible(
-                    child: GridView(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        childAspectRatio: 3,
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 10,
+                ),
+                Flexible(
+                  child: GridView(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      childAspectRatio: 3,
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 10,
+                    ),
+                    primary: false,
+                    children: <Widget>[
+                      MaterialButton(
+                        onPressed: !controller.isQuizzing
+                            ? () {
+                                if (!controller.isAnimating) {
+                                  controller.startAnimation();
+                                } else {
+                                  controller.stopAnimation();
+                                }
+                              }
+                            : null,
+                        child: controller.isAnimating
+                            ? Text("Stop animation")
+                            : Text("Start animation"),
                       ),
-                      primary: false,
-                      children: <Widget>[
-                        MaterialButton(
-                          onPressed: !controller.isQuizzing
-                              ? () {
-                                  if (!controller.isAnimating) {
-                                    controller.startAnimation();
-                                  } else {
-                                    controller.stopAnimation();
-                                  }
-                                }
-                              : null,
-                          child: controller.isAnimating
-                              ? Text("Stop animation")
-                              : Text("Start animation"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            if (!controller.isQuizzing) {
-                              controller.startQuiz();
-                            } else {
-                              controller.stopQuiz();
-                            }
-                          },
-                          child: controller.isQuizzing
-                              ? Text("Stop quiz")
-                              : Text("Start quiz"),
-                        ),
-                        MaterialButton(
-                          onPressed: !controller.isQuizzing
-                              ? () {
-                                  controller.nextStroke();
-                                }
-                              : null,
-                          child: Text("Next stroke"),
-                        ),
-                        MaterialButton(
-                          onPressed: !controller.isQuizzing
-                              ? () {
-                                  controller.previousStroke();
-                                }
-                              : null,
-                          child: Text("Previous stroke"),
-                        ),
-                        MaterialButton(
-                          onPressed: !controller.isQuizzing
-                              ? () {
-                                  controller.showFullCharacter();
-                                }
-                              : null,
-                          child: Text("Show full character"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            controller.reset();
-                          },
-                          child: Text("Reset"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            controller.setShowOutline(!controller.showOutline);
-                          },
-                          child: controller.showOutline
-                              ? Text("Hide outline")
-                              : Text("Show Outline"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            controller.setShowMedian(!controller.showMedian);
-                          },
-                          child: controller.showMedian
-                              ? Text("Hide medians")
-                              : Text("Show medians"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            controller.setHighlightRadical(
-                                !controller.highlightRadical);
-                          },
-                          child: controller.highlightRadical
-                              ? Text("Unhighlight radical")
-                              : Text("Highlight radical"),
-                        ),
-                        MaterialButton(
-                          onPressed: () {
-                            controller
-                                .setShowUserStroke(!controller.showUserStroke);
-                          },
-                          child: controller.showUserStroke
-                              ? Text("Hide user strokes")
-                              : Text("Show user strokes"),
-                        ),
-                      ],
-                    ),
+                      MaterialButton(
+                        onPressed: () {
+                          if (!controller.isQuizzing) {
+                            controller.startQuiz();
+                          } else {
+                            controller.stopQuiz();
+                          }
+                        },
+                        child: controller.isQuizzing
+                            ? Text("Stop quiz")
+                            : Text("Start quiz"),
+                      ),
+                      MaterialButton(
+                        onPressed: !controller.isQuizzing
+                            ? () {
+                                controller.nextStroke();
+                              }
+                            : null,
+                        child: Text("Next stroke"),
+                      ),
+                      MaterialButton(
+                        onPressed: !controller.isQuizzing
+                            ? () {
+                                controller.previousStroke();
+                              }
+                            : null,
+                        child: Text("Previous stroke"),
+                      ),
+                      MaterialButton(
+                        onPressed: !controller.isQuizzing
+                            ? () {
+                                controller.showFullCharacter();
+                              }
+                            : null,
+                        child: Text("Show full character"),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          controller.reset();
+                        },
+                        child: Text("Reset"),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          controller.setShowOutline(!controller.showOutline);
+                        },
+                        child: controller.showOutline
+                            ? Text("Hide outline")
+                            : Text("Show Outline"),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          controller.setShowMedian(!controller.showMedian);
+                        },
+                        child: controller.showMedian
+                            ? Text("Hide medians")
+                            : Text("Show medians"),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          controller.setHighlightRadical(
+                              !controller.highlightRadical);
+                        },
+                        child: controller.highlightRadical
+                            ? Text("Unhighlight radical")
+                            : Text("Highlight radical"),
+                      ),
+                      MaterialButton(
+                        onPressed: () {
+                          controller
+                              .setShowUserStroke(!controller.showUserStroke);
+                        },
+                        child: controller.showUserStroke
+                            ? Text("Hide user strokes")
+                            : Text("Show user strokes"),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          );
-        }),
-      ),
+          ),
+        );
+      }),
     );
   }
 }
