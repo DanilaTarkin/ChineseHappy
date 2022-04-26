@@ -13,6 +13,9 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
   final _formKey = GlobalKey<FormState>();
   var rememberValue = false;
 
+  final confirmPasswordEditingController = new TextEditingController();
+  final passwordEditingController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,11 +58,15 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 height: 20,
               ),
               TextFormField(
+                controller: passwordEditingController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
                   }
                   return null;
+                },
+                onSaved: (value) {
+                 passwordEditingController.text = value!;
                 },
                 maxLines: 1,
                 obscureText: true,
@@ -75,11 +82,16 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 height: 20,
               ),
               TextFormField(
+                controller: confirmPasswordEditingController,
                 validator: (value) {
-                  if (value == null || value.isEmpty) {
+                  if (value == null || confirmPasswordEditingController.text !=
+              passwordEditingController.text) {
                     return 'Please repeat your password';
                   }
                   return null;
+                },
+                onSaved: (value) {
+                  confirmPasswordEditingController.text = value!;
                 },
                 maxLines: 1,
                 obscureText: true,
@@ -108,7 +120,8 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {}
+                  if (_formKey.currentState!.validate()) {print('reg is succes');}
+                  else {print('reg is NOT succes');}
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
