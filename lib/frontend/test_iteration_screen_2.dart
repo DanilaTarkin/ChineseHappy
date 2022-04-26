@@ -14,7 +14,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITERATION 2 TYPE'),
+        title: const Text('{test_iteration_screen_2_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -34,7 +34,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
             flex: 4,
             child: Center(
               child: Text(
-                'QUESTION',
+                '{content_qusetion}',
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -55,14 +55,14 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING RIGHT! [0]");
+                              print("{message_button_answer_true}");
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
                                     gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
@@ -72,9 +72,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                         ])),
                                 child: const Center(
                                     child: Text(
-                                  "[TRUE ANSWER]",
+                                  "{button_answer_true}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 18,
                                   ),
                                 ))),
                           ),
@@ -83,14 +83,14 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING WRONG! [1]");
+                              print("{message_button_answer_false}");
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
                                     gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
@@ -100,9 +100,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                         ])),
                                 child: const Center(
                                     child: Text(
-                                  "[FALSE 1]",
+                                  "{button_answer_false}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 18,
                                   ),
                                 ))),
                           ),
@@ -118,7 +118,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING WRONG! [2]");
+                              print("{message_button_answer_false}");
                             },
                             child: Container(
                                 decoration: BoxDecoration(
@@ -135,9 +135,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                 margin: const EdgeInsets.all(5),
                                 child: const Center(
                                     child: Text(
-                                  "[FALSE 2]",
+                                  "{button_answer_false}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 18,
                                   ),
                                 ))),
                           ),
@@ -146,11 +146,10 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING WRONG! [3]");
+                              print("{message_button_answer_false}");
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
-                                //color: colorsButton[3],
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
                                     borderRadius: const BorderRadius.all(
@@ -164,9 +163,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                         ])),
                                 child: const Center(
                                     child: Text(
-                                  "[FALSE 3]",
+                                  "{button_answer_false}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 18,
                                   ),
                                 ))),
                           ),

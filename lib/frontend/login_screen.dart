@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:email_validator/email_validator.dart';
 
 import 'registration_screen.dart';
@@ -21,7 +20,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('{login_screen_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -83,14 +82,14 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    print('LOGIN IS SUCCES!');
+                    print('{message_login_accepted}');
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) =>
                                 const MainScreen()));
                   } else {
-                    print('LOGIN NOT VALID!');
+                    print('{message_login_warning}');
                   }
                 },
                 style: ElevatedButton.styleFrom(
@@ -105,7 +104,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  print('START NO LOGIN!');
+                  print('{message_login_no}');
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(

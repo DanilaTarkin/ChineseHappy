@@ -16,7 +16,7 @@ class _TestsScreenState extends State<TestsScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('TESTS'),
+        title: const Text('{tests_screen_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,

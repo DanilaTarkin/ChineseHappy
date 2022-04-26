@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 
 import 'tests_screen.dart';
 
-class AccountScreen extends StatefulWidget {
-  const AccountScreen({Key? key}) : super(key: key);
+class ResultScreen extends StatefulWidget {
+  const ResultScreen({Key? key}) : super(key: key);
 
   @override
-  State<AccountScreen> createState() => _AccountScreenState();
+  State<ResultScreen> createState() => _ResultScreenState();
 }
 
-class _AccountScreenState extends State<AccountScreen> {
+class _ResultScreenState extends State<ResultScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('RESULT'),
+        title: const Text('{result_screen_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -28,15 +28,14 @@ class _AccountScreenState extends State<AccountScreen> {
               color: Colors.grey,
               child: GestureDetector(
                 onTap: () {
-                  print('{message_back_to_test_succes}!');
-                  Navigator.pushAndRemoveUntil(
+                  print('{message_button_next}');
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) => const TestsScreen()),
-                    (Route<dynamic> route) => false,
                   );
                 },
-                child: const Text('Log out'),
+                child: const Text('{button_next}'),
               ),
             ),
           ),

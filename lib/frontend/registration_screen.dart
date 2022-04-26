@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/login_screen_new.dart';
+import 'package:happychinese/frontend/login_screen.dart';
 
 class RegisrtationScreen extends StatefulWidget {
   const RegisrtationScreen({Key? key}) : super(key: key);
@@ -66,7 +66,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                   return null;
                 },
                 onSaved: (value) {
-                 passwordEditingController.text = value!;
+                  passwordEditingController.text = value!;
                 },
                 maxLines: 1,
                 obscureText: true,
@@ -84,8 +84,9 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
               TextFormField(
                 controller: confirmPasswordEditingController,
                 validator: (value) {
-                  if (value == null || confirmPasswordEditingController.text !=
-              passwordEditingController.text) {
+                  if (value == null ||
+                      confirmPasswordEditingController.text !=
+                          passwordEditingController.text) {
                     return 'Please repeat your password';
                   }
                   return null;
@@ -120,8 +121,11 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  if (_formKey.currentState!.validate()) {print('reg is succes');}
-                  else {print('reg is NOT succes');}
+                  if (_formKey.currentState!.validate()) {
+                    print('reg is succes');
+                  } else {
+                    print('reg is NOT succes');
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),

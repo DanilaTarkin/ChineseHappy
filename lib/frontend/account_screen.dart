@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'login_screen_new.dart';
+import 'login_screen.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({Key? key}) : super(key: key);
@@ -15,20 +15,20 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('ACCOUNT'),
+        title: const Text('{account_screen_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
       ),
       body: ListView(
         children: [
-          const Text('INFO'),
+          const Text('{account_info}'),
           Center(
             child: Container(
               color: Colors.grey,
               child: GestureDetector(
                 onTap: () {
-                  print('LOGOUT IS SUCCES!');
+                  print('{message_logout_succes}');
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
@@ -37,7 +37,7 @@ class _AccountScreenState extends State<AccountScreen> {
                     (Route<dynamic> route) => false,
                   );
                 },
-                child: const Text('Log out'),
+                child: const Text('{button_logout}'),
               ),
             ),
           ),

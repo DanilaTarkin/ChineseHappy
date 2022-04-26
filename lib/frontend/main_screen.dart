@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/tests_screen.dart';
 
+import 'tests_screen.dart';
 import 'account_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -16,12 +16,12 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-          title: const Text('THEMES'),
+          title: const Text('{main_screen_name}'),
           centerTitle: true,
           backgroundColor: Colors.black38,
           foregroundColor: Colors.white70,
           leading: IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () {
               Navigator.push(
                   context,
@@ -73,7 +73,7 @@ class _BlockComponentState extends State<BlockComponent> {
         flex: 1,
         child: GestureDetector(
           onTap: () {
-            print('clicked ' + index.toString());
+            print('{message_choose_theme_${index.toString()}}');
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -84,7 +84,7 @@ class _BlockComponentState extends State<BlockComponent> {
               height: 100,
               child: Center(
                 child: Text(
-                  index.toString(),
+                  '{theme_${index.toString()}}',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,

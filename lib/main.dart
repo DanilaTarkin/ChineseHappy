@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/core/theme.dart';
+
+import 'core/theme.dart';
 import 'core/navigation.dart';
 
 void main() {

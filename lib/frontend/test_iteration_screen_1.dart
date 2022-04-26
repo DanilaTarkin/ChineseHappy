@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'result_screen.dart';
 import 'quiz_screen.dart';
 import 'tests_screen.dart';
 
@@ -15,7 +16,7 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ITERATION 1 TYPE'),
+        title: const Text('{test_iteration_screen_1_name}'),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -80,6 +81,13 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                           child: GestureDetector(
                             onTap: () {
                               print("{message_button_skip}");
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const ResultScreen()),
+                                (Route<dynamic> route) => false,
+                              );
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
@@ -108,6 +116,13 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                           child: GestureDetector(
                             onTap: () {
                               print("{message_button_accepted}");
+                              Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        const ResultScreen()),
+                                (Route<dynamic> route) => false,
+                              );
                             },
                             child: Container(
                                 decoration: BoxDecoration(
