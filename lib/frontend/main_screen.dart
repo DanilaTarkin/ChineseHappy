@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/tests_sccreen.dart';
+import 'package:happychinese/frontend/tests_screen.dart';
 
 import 'account_screen.dart';
 
@@ -85,7 +85,7 @@ class _BlockComponentState extends State<BlockComponent> {
               child: Center(
                 child: Text(
                   index.toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,
                   ),

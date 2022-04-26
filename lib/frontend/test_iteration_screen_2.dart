@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/tests_sccreen.dart';
 
-import 'account_screen.dart';
+import 'tests_screen.dart';
 
 class TestIterationScreen2 extends StatefulWidget {
   const TestIterationScreen2({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
         leading: IconButton(
-          icon: const Icon(Icons.exit_to_app),
+          icon: const Icon(Icons.close),
           onPressed: () {
             Navigator.pushReplacement(
                 context,
@@ -31,15 +30,13 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
       ),
       body: Column(
         children: [
-          Expanded(
+          const Expanded(
             flex: 4,
             child: Center(
-              child: Container(
-                child: Text(
-                  'QUESTION',
-                  style: const TextStyle(
-                    fontSize: 20,
-                  ),
+              child: Text(
+                'QUESTION',
+                style: TextStyle(
+                  fontSize: 20,
                 ),
               ),
             ),
@@ -66,7 +63,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                     border: Border.all(color: Colors.black38),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -94,7 +91,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                     border: Border.all(color: Colors.black38),
                                     borderRadius:
                                         BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -126,9 +123,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                             child: Container(
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -156,9 +153,9 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                 //color: colorsButton[3],
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [

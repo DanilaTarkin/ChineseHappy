@@ -59,38 +59,36 @@ class _BlockComponentState extends State<BlockComponent> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        flex: 1,
-        child: GestureDetector(
-          onTap: () {
-            print('clicked ' + index.toString());
-            // пока через if, пока нет бэка
-            if (index == 1) {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          const TestIterationScreen1()));
-            } else {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (BuildContext context) =>
-                          const TestIterationScreen2()));
-            }
-          },
-          child: Container(
-              color: backgroundColor,
-              height: 100,
-              child: Center(
-                child: Text(
-                  'level ' + index.toString(),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32,
-                  ),
-                ),
-              )),
-        ));
+    return GestureDetector(
+      onTap: () {
+        print('clicked ' + index.toString());
+        // пока через if, пока нет бэка
+        if (index == 1) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      const TestIterationScreen1()));
+        } else {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (BuildContext context) =>
+                      const TestIterationScreen2()));
+        }
+      },
+      child: Container(
+          color: backgroundColor,
+          height: 100,
+          child: Center(
+            child: Text(
+              'level ' + index.toString(),
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+            ),
+          )),
+    );
   }
 }

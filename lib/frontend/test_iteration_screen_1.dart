@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:happychinese/frontend/quiz_screen.dart';
-import 'package:happychinese/frontend/tests_sccreen.dart';
 
-import 'account_screen.dart';
+import 'quiz_screen.dart';
+import 'tests_screen.dart';
 
 class TestIterationScreen1 extends StatefulWidget {
   const TestIterationScreen1({Key? key}) : super(key: key);
@@ -21,9 +20,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
         leading: IconButton(
-          icon: const Icon(Icons.exit_to_app),
+          icon: const Icon(Icons.close),
           onPressed: () {
-            Navigator.pushReplacement(
+            Navigator.pop(
                 context,
                 MaterialPageRoute(
                     builder: (BuildContext context) => const TestsScreen()));
@@ -33,16 +32,8 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
       body: Column(
         children: [
           Expanded(
-            flex: 4,
+            flex: 8,
             child: Center(
-              // child: Container(
-              //   child: Text(
-              //     'QUESTION',
-              //     style: const TextStyle(
-              //       fontSize: 20,
-              //     ),
-              //   ),
-              // ),
               child: QuazComponent(),
             ),
           ),
@@ -60,15 +51,15 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING RIGHT! [0]");
+                              print("{message_button_clear}");
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -77,9 +68,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                         ])),
                                 child: const Center(
                                     child: Text(
-                                  "[TRUE ANSWER]",
+                                  "{button_clear}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 14,
                                   ),
                                 ))),
                           ),
@@ -88,15 +79,15 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING WRONG! [1]");
+                              print("{message_button_skip}");
                             },
                             child: Container(
                                 margin: const EdgeInsets.all(5),
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -105,32 +96,25 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                         ])),
                                 child: const Center(
                                     child: Text(
-                                  "[FALSE 1]",
+                                  "{button_skip}",
                                   style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 14,
                                   ),
                                 ))),
                           ),
                         ),
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Row(
-                      children: [
                         Expanded(
                           flex: 1,
                           child: GestureDetector(
                             onTap: () {
-                              print("ANSWERING WRONG! [2]");
+                              print("{message_button_accepted}");
                             },
                             child: Container(
                                 decoration: BoxDecoration(
                                     border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(15)),
+                                    gradient: const LinearGradient(
                                         begin: Alignment.topLeft,
                                         end: Alignment.bottomRight,
                                         colors: [
@@ -140,38 +124,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                 margin: const EdgeInsets.all(5),
                                 child: const Center(
                                     child: Text(
-                                  "[FALSE 2]",
+                                  "{button_accepted}",
                                   style: TextStyle(
-                                    fontSize: 26,
-                                  ),
-                                ))),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: GestureDetector(
-                            onTap: () {
-                              print("ANSWERING WRONG! [3]");
-                            },
-                            child: Container(
-                                margin: const EdgeInsets.all(5),
-                                //color: colorsButton[3],
-                                decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.black38),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(15)),
-                                    gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment.bottomRight,
-                                        colors: [
-                                          Colors.white10,
-                                          Colors.white24
-                                        ])),
-                                child: const Center(
-                                    child: Text(
-                                  "[FALSE 3]",
-                                  style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 14,
                                   ),
                                 ))),
                           ),
