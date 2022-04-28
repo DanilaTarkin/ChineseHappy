@@ -20,146 +20,156 @@ class _AccountScreenState extends State<AccountScreen> {
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
       ),
-      body: ListView(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Expanded(
               child: Container(
-                height: 200,
                 color: Colors.green,
                 child: Row(
                   children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundColor: Colors.yellow,
-                    ),
-                    SizedBox(
-                      width: 20,
+                    const Padding(
+                      padding: EdgeInsets.only(left: 25.0, right: 25.0),
+                      child: CircleAvatar(
+                        radius: 40,
+                        backgroundColor: Colors.yellow,
+                      ),
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text('Name Profile',
-                        style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                              ),
+                      children: const [
+                        Text(
+                          'Name Profile',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                          ),
                         ),
-                        SizedBox(
-                          height: 10,
+                        Text(
+                          'Email Profile',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
+                            height: 1.5,
+                          ),
                         ),
-                        const Text('Email Profile',
-                        style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 24,
-                              ),
-                              ),
                       ],
                     ),
                   ],
                 ),
               ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: 100,
-            color: Colors.red,
-            child: Row(
-              children: [
-              Container(
-                color: Colors.blue,
-                child: Column(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: const Text(
-                          '3',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: const Text(
-                          'Всего',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ),
-                    ]),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 100,
+              color: Colors.blue,
+              child: Row(children: [
+                Expanded(
+                  flex: 1,
                   child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          '3',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '3',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          height: 1,
                         ),
-                        const Text(
-                          'В этом' + '\n' + 'месяце',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'Всего',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          height: 1,
                         ),
-                      ]),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  color: Colors.blue,
-                  child: Column(
-                     crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        const Text(
-                          '3',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
-                        ),
-                        const Text(
-                          'В прошлом' + '\n' + 'месяце',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ]),
-                ),
-              ),
-            ]),
-          ),
-          Center(
-              child:
-               TextButton(
-                    onPressed: () {
-                      print('{message_registration_screen}');
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginScreenNew(),
-                        ),
-                      );
-                    },
-                    child: const Text('Logout'),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
-          ),
-        ],
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '3',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          height: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'В этом месяце',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          height: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '3',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                          height: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        'В прошлом месяце',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          height: 1,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              ]),
+            ),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  print('{message_registration_screen}');
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreenNew(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Logout',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 28,
+                    backgroundColor: Colors.white30,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
