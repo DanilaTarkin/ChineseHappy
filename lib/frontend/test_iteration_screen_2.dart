@@ -21,6 +21,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () {
+            print('{message_test_screen}');
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(

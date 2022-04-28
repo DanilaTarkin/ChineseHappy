@@ -28,7 +28,7 @@ class _ResultScreenState extends State<ResultScreen> {
               color: Colors.grey,
               child: GestureDetector(
                 onTap: () {
-                  print('{message_button_next}');
+                  print('{message_button_next_theme}');
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

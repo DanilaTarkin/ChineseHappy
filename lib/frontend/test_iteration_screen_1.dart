@@ -23,6 +23,7 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () {
+            print('{message_test_screen}');
             Navigator.pop(
                 context,
                 MaterialPageRoute(

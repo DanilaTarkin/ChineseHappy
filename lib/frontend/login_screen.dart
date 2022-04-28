@@ -130,6 +130,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                   const Text('Not registered yet?'),
                   TextButton(
                     onPressed: () {
+                      print('{message_registration_screen}');
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

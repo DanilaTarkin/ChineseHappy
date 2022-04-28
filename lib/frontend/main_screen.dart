@@ -23,6 +23,7 @@ class _MainScreenState extends State<MainScreen> {
           leading: IconButton(
             icon: const Icon(Icons.home),
             onPressed: () {
+              print('{message_account_screen}');
               Navigator.push(
                   context,
                   MaterialPageRoute(

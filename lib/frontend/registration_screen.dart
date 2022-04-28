@@ -28,6 +28,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
+            print('{message_login_screen}');
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -122,9 +123,9 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-                    print('reg is succes');
+                    print('{message_registration_accepted}');
                   } else {
-                    print('reg is NOT succes');
+                    print('{message_registration_NOT_accepted}');
                   }
                 },
                 style: ElevatedButton.styleFrom(
