@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:happychinese/l10n/all_locales.dart';
+import 'package:happychinese/locale_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'login_screen.dart';
 
@@ -15,7 +19,7 @@ class _AccountScreenState extends State<AccountScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('{account_screen_name}'),
+        title: Text(AppLocalizations.of(context)!.account_screen_name),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -160,6 +164,40 @@ class _AccountScreenState extends State<AccountScreen> {
                 },
                 child: const Text(
                   'Logout',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 28,
+                    backgroundColor: Colors.white30,
+                  ),
+                ),
+              ),
+            ),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  print('change lang');
+                  Provider.of<LocaleProvider>(context, listen: false)
+                      .setLocale(AllLocales.all[1]);
+                },
+                child: const Text(
+                  'RUS',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 28,
+                    backgroundColor: Colors.white30,
+                  ),
+                ),
+              ),
+            ),
+            Center(
+              child: TextButton(
+                onPressed: () {
+                  print('change lang');
+                  Provider.of<LocaleProvider>(context, listen: false)
+                      .setLocale(AllLocales.all[0]);
+                },
+                child: const Text(
+                  'ENG',
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 28,

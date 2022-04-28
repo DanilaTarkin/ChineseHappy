@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:happychinese/frontend/account_screen.dart';
-import 'package:happychinese/frontend/splash_screen_new.dart';
+import 'package:happychinese/frontend/splash_screen.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);

@@ -3,16 +3,16 @@ import 'dart:async';
 
 import 'login_screen.dart';
 
-class SplashScreenNew extends StatefulWidget {
-  const SplashScreenNew({
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SplashScreenNew> createState() => _SplashScreenNewState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenNewState extends State<SplashScreenNew> {
+class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();

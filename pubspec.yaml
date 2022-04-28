@@ -6,10 +6,13 @@ version: 1.0.0+1
 
 environment:
   sdk: ^2.16.1
-
+# 🌴
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
   adobe_xd: ^2.0.0
   svg_path_parser: ^1.0.0
   cupertino_icons: ^1.0.2
@@ -24,6 +27,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
   fonts:
   - family: Segoe UI
     fonts:

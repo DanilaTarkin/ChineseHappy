@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'registration_screen.dart';
 import 'main_screen.dart';
@@ -20,7 +21,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('{login_screen_name}'),
+        title: Text(AppLocalizations.of(context)!.login_screen_name),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
