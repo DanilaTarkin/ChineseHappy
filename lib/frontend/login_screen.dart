@@ -35,10 +35,10 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
               TextFormField(
                 validator: (value) => EmailValidator.validate(value!)
                     ? null
-                    : "Please enter a valid email",
+                    : AppLocalizations.of(context)!.validator_email,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'Enter your email',
+                  hintText: AppLocalizations.of(context)!.input_email,//'Enter your email',
                   prefixIcon: const Icon(Icons.email),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -51,7 +51,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
               TextFormField(
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                    return AppLocalizations.of(context)!.validator_password;
                   }
                   return null;
                 },
@@ -59,14 +59,14 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                 obscureText: true,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.lock),
-                  hintText: 'Enter your password',
+                  hintText: AppLocalizations.of(context)!.input_password, //'Enter your password',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               ),
               CheckboxListTile(
-                title: const Text("Remember me"),
+                title: Text(AppLocalizations.of(context)!.remember_me),
                 contentPadding: EdgeInsets.zero,
                 value: rememberValue,
                 activeColor: Theme.of(context).colorScheme.primary,
@@ -96,8 +96,8 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
                 ),
-                child: const Text(
-                  'Sign in',
+                child: Text(
+                  AppLocalizations.of(context)!.sign_in,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -128,7 +128,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Not registered yet?'),
+                  Text(AppLocalizations.of(context)!.not_register),
                   TextButton(
                     onPressed: () {
                       print('{message_registration_screen}');
@@ -139,7 +139,7 @@ class _LoginScreenNewState extends State<LoginScreenNew> {
                         ),
                       );
                     },
-                    child: const Text('Create an account'),
+                    child: Text(AppLocalizations.of(context)!.create_acc),
                   ),
                 ],
               ),

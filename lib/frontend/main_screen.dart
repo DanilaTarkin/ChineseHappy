@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'tests_screen.dart';
 import 'account_screen.dart';
@@ -16,7 +17,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-          title: const Text('{main_screen_name}'),
+          title: Text(AppLocalizations.of(context)!.main_screen_name),
           centerTitle: true,
           backgroundColor: Colors.black38,
           foregroundColor: Colors.white70,
@@ -85,7 +86,7 @@ class _BlockComponentState extends State<BlockComponent> {
               height: 100,
               child: Center(
                 child: Text(
-                  '{theme_${index.toString()}}',
+                  AppLocalizations.of(context)!.ctheme + '${index.toString()}',
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 32,

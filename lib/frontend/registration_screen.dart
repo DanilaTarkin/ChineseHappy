@@ -1,5 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:happychinese/frontend/login_screen.dart';
 
 class RegisrtationScreen extends StatefulWidget {
@@ -21,7 +22,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: const Text('Registration'),
+        title: Text(AppLocalizations.of(context)!.registration_screen_title),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -45,10 +46,10 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
               TextFormField(
                 validator: (value) => EmailValidator.validate(value!)
                     ? null
-                    : "Please enter a valid email",
+                    : AppLocalizations.of(context)!.validator_email,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'Enter your email',
+                  hintText: AppLocalizations.of(context)!.input_email,
                   prefixIcon: const Icon(Icons.email),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -62,7 +63,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 controller: passwordEditingController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your password';
+                    return AppLocalizations.of(context)!.validator_password;
                   }
                   return null;
                 },
@@ -73,7 +74,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 obscureText: true,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.lock),
-                  hintText: 'Enter new password',
+                  hintText: AppLocalizations.of(context)!.input_new_password,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -88,7 +89,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                   if (value == null ||
                       confirmPasswordEditingController.text !=
                           passwordEditingController.text) {
-                    return 'Please repeat your password';
+                    return AppLocalizations.of(context)!.validator_confirm_password;
                   }
                   return null;
                 },
@@ -99,7 +100,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 obscureText: true,
                 decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.lock),
-                  hintText: 'Repeat new password',
+                  hintText: AppLocalizations.of(context)!.input_confirm_password,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -109,7 +110,7 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 height: 20,
               ),
               CheckboxListTile(
-                title: const Text("I accepted confidenciality politics."),
+                title: Text(AppLocalizations.of(context)!.confidenciality_politics),
                 contentPadding: EdgeInsets.zero,
                 value: rememberValue,
                 activeColor: Theme.of(context).colorScheme.primary,
@@ -131,8 +132,8 @@ class _RegisrtationScreenState extends State<RegisrtationScreen> {
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.fromLTRB(40, 15, 40, 15),
                 ),
-                child: const Text(
-                  'Sign up',
+                child: Text(
+                  AppLocalizations.of(context)!.sign_up,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),

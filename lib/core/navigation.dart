@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:happychinese/frontend/account_screen.dart';
+import 'package:happychinese/frontend/login_screen.dart';
 import 'package:happychinese/frontend/splash_screen.dart';
 
 class Navigation extends StatefulWidget {
@@ -12,6 +13,6 @@ class Navigation extends StatefulWidget {
 class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
-    return const AccountScreen();
+    return const LoginScreenNew();
   }
 }

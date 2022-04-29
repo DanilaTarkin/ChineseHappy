@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'tests_screen.dart';
 
@@ -14,7 +15,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('{test_iteration_screen_2_name}'),
+        title: Text(AppLocalizations.of(context)!.test_iteration_screen_2_name),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -31,11 +32,11 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
       ),
       body: Column(
         children: [
-          const Expanded(
+          Expanded(
             flex: 4,
             child: Center(
               child: Text(
-                '{content_qusetion}',
+                AppLocalizations.of(context)!.content_quisetion,
                 style: TextStyle(
                   fontSize: 20,
                 ),
@@ -71,9 +72,11 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                           Colors.white24,
                                           Colors.white10
                                         ])),
-                                child: const Center(
+                                child: //const 
+                                Center(
                                     child: Text(
-                                  "{button_answer_true}",
+                                      AppLocalizations.of(context)!.button_answer_true,
+                                  //"{button_answer_true}",
                                   style: TextStyle(
                                     fontSize: 18,
                                   ),
@@ -99,9 +102,11 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
                                           Colors.white10,
                                           Colors.white24
                                         ])),
-                                child: const Center(
+                                child: //const 
+                                Center(
                                     child: Text(
-                                  "{button_answer_false}",
+                                      AppLocalizations.of(context)!.button_answer_false,
+                                 // "{button_answer_false}",
                                   style: TextStyle(
                                     fontSize: 18,
                                   ),

@@ -75,7 +75,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         '3',
                         style: TextStyle(
@@ -86,7 +86,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'Всего',
+                        AppLocalizations.of(context)!.activity_days_total,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -101,8 +101,8 @@ class _AccountScreenState extends State<AccountScreen> {
                   flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         '3',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -112,7 +112,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'В этом месяце',
+                        AppLocalizations.of(context)!.activity_days_second_month,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -127,7 +127,7 @@ class _AccountScreenState extends State<AccountScreen> {
                   flex: 1,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         '3',
                         style: TextStyle(
@@ -138,7 +138,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        'В прошлом месяце',
+                        AppLocalizations.of(context)!.activity_days_second_month,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -162,8 +162,8 @@ class _AccountScreenState extends State<AccountScreen> {
                     ),
                   );
                 },
-                child: const Text(
-                  'Logout',
+                child: Text(
+                  AppLocalizations.of(context)!.logout,
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 28,

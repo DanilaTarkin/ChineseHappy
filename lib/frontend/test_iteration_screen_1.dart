@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'result_screen.dart';
 import 'quiz_screen.dart';
@@ -16,7 +17,7 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('{test_iteration_screen_1_name}'),
+        title: Text(AppLocalizations.of(context)!.test_iteration_screen_1_name),
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
@@ -68,9 +69,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                           Colors.white24,
                                           Colors.white10
                                         ])),
-                                child: const Center(
+                                child: Center(
                                     child: Text(
-                                  "{button_clear}",
+                                      AppLocalizations.of(context)!.button_clear,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),
@@ -103,9 +104,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                           Colors.white10,
                                           Colors.white24
                                         ])),
-                                child: const Center(
+                                child: Center(
                                     child: Text(
-                                  "{button_skip}",
+                                      AppLocalizations.of(context)!.button_skip,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),
@@ -138,9 +139,9 @@ class _TestIterationScreen1State extends State<TestIterationScreen1> {
                                           Colors.white10
                                         ])),
                                 margin: const EdgeInsets.all(5),
-                                child: const Center(
+                                child: Center(
                                     child: Text(
-                                  "{button_accepted}",
+                                      AppLocalizations.of(context)!.button_accepted,
                                   style: TextStyle(
                                     fontSize: 14,
                                   ),

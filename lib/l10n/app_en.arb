@@ -1,6 +1,44 @@
 {
-  "account_screen_name": "Account",
   "login_screen_name": "Login",
+  "input_password": "Enter your password",
+  "input_email": "Enter yuor email",
+  "remember_me": "Remember Me",
+  "sign_in": "Sign in",
+  "not_register": "Not registered yet?",
+  "create_acc": "Create an account",
+
+  "validator_email": "Not valid email",
+  "validator_password": "Incorrect password",
+  "validator_confirm_password": "Please repeat your password",
+
+  "registration_screen_title": "Registration",
+  "input_new_password": "Enter new password",
+  "input_confirm_password": "Repeat new password",
+  "confidenciality_politics": "I accepted confidenciality politics.",
+  "sign_up": "Sign up",
+
+  "account_screen_name": "Account",
+  "activity_days_total": "Total",
+  "activity_days_second_month": "This month",
+  "activity_days_last_month": "Last month",
+  "logout": "Logout",
+
+  "main_screen_name": "Main Screen",
+  "ctheme": "Theme",
+
+  "tests_screen_name": "Lessons",
+  "level_lessons": "Lesson",
   
+  "test_iteration_screen_1_name": "Test1",
+  "button_clear": "Clear",
+  "button_skip": "Skip",
+  "button_accepted": "Accepted",
+
+  "test_iteration_screen_2_name": "Test2",
+  "content_quisetion": "Content quisetion",
+  "button_answer_true": "Answer_true",
+  "button_answer_false": "Answer_false",
+
+
   "language": "English"
 }
