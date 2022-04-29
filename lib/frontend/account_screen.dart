@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:happychinese/frontend/settings_screen.dart';
 import 'package:happychinese/l10n/all_locales.dart';
 import 'package:happychinese/locale_provider.dart';
 import 'package:provider/provider.dart';
@@ -23,6 +24,20 @@ class _AccountScreenState extends State<AccountScreen> {
         centerTitle: true,
         backgroundColor: Colors.black38,
         foregroundColor: Colors.white70,
+        actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.settings),
+              onPressed: () {
+                print('{message_registration_screen}');
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SettingScreen(),
+                    ),
+                  );
+              },
+            )
+          ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -112,7 +127,7 @@ class _AccountScreenState extends State<AccountScreen> {
                         textAlign: TextAlign.center,
                       ),
                       Text(
-                        AppLocalizations.of(context)!.activity_days_second_month,
+                        AppLocalizations.of(context)!.activity_days_last_month,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -166,46 +181,46 @@ class _AccountScreenState extends State<AccountScreen> {
                   AppLocalizations.of(context)!.logout,
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 28,
+                    fontSize: 16,
                     backgroundColor: Colors.white30,
                   ),
                 ),
               ),
             ),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  print('change lang');
-                  Provider.of<LocaleProvider>(context, listen: false)
-                      .setLocale(AllLocales.all[1]);
-                },
-                child: const Text(
-                  'RUS',
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 28,
-                    backgroundColor: Colors.white30,
-                  ),
-                ),
-              ),
-            ),
-            Center(
-              child: TextButton(
-                onPressed: () {
-                  print('change lang');
-                  Provider.of<LocaleProvider>(context, listen: false)
-                      .setLocale(AllLocales.all[0]);
-                },
-                child: const Text(
-                  'ENG',
-                  style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 28,
-                    backgroundColor: Colors.white30,
-                  ),
-                ),
-              ),
-            ),
+            // Center(
+            //   child: TextButton(
+            //     onPressed: () {
+            //       print('change lang');
+            //       Provider.of<LocaleProvider>(context, listen: false)
+            //           .setLocale(AllLocales.all[1]);
+            //     },
+            //     child: const Text(
+            //       'RUS',
+            //       style: TextStyle(
+            //         color: Colors.black87,
+            //         fontSize: 28,
+            //         backgroundColor: Colors.white30,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // Center(
+            //   child: TextButton(
+            //     onPressed: () {
+            //       print('change lang');
+            //       Provider.of<LocaleProvider>(context, listen: false)
+            //           .setLocale(AllLocales.all[0]);
+            //     },
+            //     child: const Text(
+            //       'ENG',
+            //       style: TextStyle(
+            //         color: Colors.black87,
+            //         fontSize: 28,
+            //         backgroundColor: Colors.white30,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

@@ -35,9 +35,11 @@
   "button_accepted": "Подтвердить",
 
   "test_iteration_screen_2_name": "Тест2",
-  "content_quisetion": "Контент вопроса",
+  "content_question": "Контент вопроса",
   "button_answer_true": "Верный ответ",
   "button_answer_false": "Неверный ответ",
+
+  "options_screen_name": "Настройки",
 
   "language": "Русский"
 }

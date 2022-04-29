@@ -36,7 +36,7 @@ class _TestIterationScreen2State extends State<TestIterationScreen2> {
             flex: 4,
             child: Center(
               child: Text(
-                AppLocalizations.of(context)!.content_quisetion,
+                AppLocalizations.of(context)!.content_question,
                 style: TextStyle(
                   fontSize: 20,
                 ),

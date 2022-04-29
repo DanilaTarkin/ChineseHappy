@@ -35,9 +35,11 @@
   "button_accepted": "Accepted",
 
   "test_iteration_screen_2_name": "Test2",
-  "content_quisetion": "Content quisetion",
+  "content_question": "Content question",
   "button_answer_true": "Answer_true",
   "button_answer_false": "Answer_false",
+
+  "options_screen_name": "Settings",
 
 
   "language": "English"

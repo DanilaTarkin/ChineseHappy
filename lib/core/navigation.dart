@@ -3,6 +3,8 @@ import 'package:happychinese/frontend/account_screen.dart';
 import 'package:happychinese/frontend/login_screen.dart';
 import 'package:happychinese/frontend/splash_screen.dart';
 
+import '../frontend/settings_screen.dart';
+
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);
 
