@@ -32,6 +32,7 @@ class _SettingScreenState extends State<SettingScreen> {
           Provider.of<LocaleProvider>(context, listen: false)
               .setLocale(AllLocales.all[0]);
         }
+        print('change lang');
       });
     }
   }
@@ -103,7 +104,8 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icons.mode_night_outlined,
                           color: Colors.purple,
                         ),
-                        title: Text("Change Theme"),
+                        title: Text(AppLocalizations.of(context)!.change_theme_app,
+                          ),
                         trailing: Icon(Icons.keyboard_arrow_right),
                         onTap: () {
                           //open change password
@@ -115,7 +117,7 @@ class _SettingScreenState extends State<SettingScreen> {
                           Icons.language,
                           color: Colors.purple,
                         ),
-                        title: Text("Change Language"),
+                        title: Text(AppLocalizations.of(context)!.change_language_app),
                         trailing: DropdownButton(
                             items: const [
                               DropdownMenuItem(

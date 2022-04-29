@@ -40,6 +40,8 @@
   "button_answer_false": "Неверный ответ",
 
   "options_screen_name": "Настройки",
+  "change_theme_app": "Изменить тему",
+  "change_language_app": "Изменить язык",
 
   "language": "Русский"
 }

@@ -40,6 +40,8 @@
   "button_answer_false": "Answer_false",
 
   "options_screen_name": "Settings",
+  "change_theme_app": "Change Theme",
+  "change_language_app": "Change Language",
 
 
   "language": "English"

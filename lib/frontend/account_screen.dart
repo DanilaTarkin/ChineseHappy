@@ -28,7 +28,7 @@ class _AccountScreenState extends State<AccountScreen> {
             IconButton(
               icon: Icon(Icons.settings),
               onPressed: () {
-                print('{message_registration_screen}');
+                print('{message_settings_screen}');
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
