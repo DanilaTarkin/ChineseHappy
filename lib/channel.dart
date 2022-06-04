@@ -11,10 +11,10 @@ class ChineseChannel extends ApplicationChannel {
   @override
   Future prepare() async {
     var dataModel = ManagedDataModel.fromCurrentMirrorSystem();
-    var psc = PostgreSQLPersistentStore.fromConnectionInfo(
+    var persistentStore  = PostgreSQLPersistentStore.fromConnectionInfo(
         "ADMIN", "root", "localhost", 5432, "postgres");
 
-    context = ManagedContext(dataModel, psc);
+    context = ManagedContext(dataModel, persistentStore );
   }
 
   @override
@@ -36,9 +36,10 @@ class ChineseChannel extends ApplicationChannel {
     router.route('/word').link(() => WordController(context));
 
     router.route('/').linkFunction((request) async {
-      return Response.ok({'key': 'value'});
+      return Response.ok("SERVER IS RUN!");
     });
 
     return router;
   }
 }
+

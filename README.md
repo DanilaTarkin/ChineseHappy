@@ -9,3 +9,5 @@
 <li>PostgreSql</li>
 <li>Docker</li>
 <li>Conduit</li>
+
+conduit db upgrade --connect postgres://ADMIN:root@localhost:5432/postgres

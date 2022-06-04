@@ -1,4 +1,4 @@
-import 'package:chinese/entity/word.dart';
+import 'package:chinese/model/word.dart';
 
 import '../chinese.dart';
 
@@ -8,14 +8,12 @@ class WordController extends ResourceController {
 
   final ManagedContext ?context;
 
-    @Operation.get()
+  @Operation.get()
   Future<Response> getAllWords() async {
     final wordsQuery = Query<Word>(context!);
     final words = await wordsQuery.fetch();
 
     return Response.ok(words);
-    //return Response.ok(["Atlanta", "Madison", "Mountain View"]);
   }
-
 }
 
