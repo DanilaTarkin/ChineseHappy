@@ -5,6 +5,7 @@
 <p> Open API for DB </p>
 ---------------------------------
 <h2> Stack: </h2>
-<p>PostgreSql</p1>
-<p>Docker</p1>
-<p>Conduit</p1>
+
+<li>PostgreSql</li>
+<li>Docker</li>
+<li>Conduit</li>
