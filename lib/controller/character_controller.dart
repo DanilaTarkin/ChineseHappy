@@ -1,24 +1,24 @@
-import 'package:chinese/model/theme.dart';
+import 'package:chinese/model/character.dart';
 
 import '../chinese.dart';
 
-class ThemeController extends ResourceController {
+class CharacterController extends ResourceController {
 
-  ThemeController(this.context);
+  CharacterController(this.context);
 
   final ManagedContext ?context;
 
   @Operation.get()
   Future<Response> getTests() async {
-    final wordsQuery = Query<Theme>(context!);
+    final wordsQuery = Query<Character>(context!);
     final words = await wordsQuery.fetch();
 
     return Response.ok(words);
   }
   
   @Operation.get('id')
-  Future<Response> getTestById(@Bind.path('id') int id, @Bind.body() Theme test) async {
-    final query = Query<Theme>(context!)
+  Future<Response> getTestById(@Bind.path('id') int id, @Bind.body() Character test) async {
+    final query = Query<Character>(context!)
       ..where((u) => u.id).equalTo(id)
       ..values = test;
 
