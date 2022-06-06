@@ -1,6 +1,10 @@
 import 'package:chinese/chinese.dart';
+import 'package:chinese/model/question.dart';
 
-class Character extends ManagedObject<_Character> implements _Character {}
+class Character extends ManagedObject<_Character> implements _Character {
+
+  
+}
 
 @Table(name: "character")
 class _Character {
@@ -9,4 +13,6 @@ class _Character {
 
   @Column(unique: true)
   String ?name;
+  
+  late Question question;
 }

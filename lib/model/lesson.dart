@@ -1,4 +1,6 @@
 import 'package:chinese/chinese.dart';
+import 'package:chinese/model/test.dart';
+import 'package:chinese/model/theme.dart';
 
 class Lesson extends ManagedObject<_Lesson> implements _Lesson {}
 
@@ -9,4 +11,9 @@ class _Lesson {
 
   @Column(unique: true)
   String ?name;
+  late ManagedSet<Theme> theme;
+
+  @Relate(#lesson)
+  late Test test;
+
 }

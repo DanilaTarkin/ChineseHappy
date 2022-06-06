@@ -1,4 +1,5 @@
 import 'package:chinese/chinese.dart';
+import 'package:chinese/model/question.dart';
 
 class QuestionType extends ManagedObject<_QuestionType> implements _QuestionType {}
 
@@ -9,4 +10,6 @@ class _QuestionType {
 
   @Column(unique: true)
   String ?name;
+
+  late Question question;
 }

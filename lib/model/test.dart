@@ -1,4 +1,6 @@
 import 'package:chinese/chinese.dart';
+import 'package:chinese/model/lesson.dart';
+import 'package:chinese/model/question.dart';
 
 class Test extends ManagedObject<_Test> implements _Test {}
 
@@ -6,7 +8,9 @@ class Test extends ManagedObject<_Test> implements _Test {}
 class _Test {
   @primaryKey
   int ?id;
+  
+  late ManagedSet<Lesson> lesson;
 
-  @Column(unique: true)
-  String ?name;
+  @Relate(#test)
+  late Question question;
 }

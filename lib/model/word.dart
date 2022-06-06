@@ -1,12 +1,15 @@
 import 'package:chinese/chinese.dart';
+import 'package:chinese/model/question.dart';
 
 class Word extends ManagedObject<_Word> implements _Word {}
 
 @Table(name: "word")
 class _Word {
   @primaryKey
-  int ?id;
+  late int id;
 
   @Column(unique: true)
-  String ?name;
+  late String name;
+
+  late Question question;
 }
